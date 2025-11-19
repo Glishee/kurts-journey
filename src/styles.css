@@ -1,0 +1,298 @@
+/* Сброс */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top left, #3a3a3a 0, #111 60%);
+  color: #fff;
+}
+
+/* Контейнер страницы */
+.page {
+  min-height: 100vh;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.lang-btn {
+  border: 1px solid #ffffff33;
+  background: #ffffff11;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+   display: inline-flex;       
+  align-items: center;         
+  gap: 8px;      
+}
+
+.flag-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px; 
+  object-fit: cover;
+  display: block;
+}
+
+.lang-btn.active {
+  background: #fff;
+  color: #111;
+}
+
+/* Основной блок */
+.hero {
+  display: flex;
+  flex: 1;
+  gap: 40px;
+}
+
+/* Левая колонка с текстом */
+.hero-text {
+  flex: 1;
+  max-width: 520px;
+}
+
+.hero-title {
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: 28px;
+  margin-top: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d5bfa0;
+}
+
+.hero-description {
+  margin-top: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.hero-thanks {
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Карточки глав */
+.chapters {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 520px;
+}
+
+.chapter-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 40px 20px;
+  height: 140px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  border: 1px solid #000000ff;
+  cursor: pointer;
+  overflow: hidden;
+
+  /* фон до hover – как на макете */
+  background-color: #e8e5e1;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chapter-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: grayscale(100%);       
+  opacity: 0;                     /
+  transform: scale(1.05);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.chapter-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);   /* до hover почти прозрачное */
+  transition: background 0.35s ease;
+}
+
+.chapter-title{
+  position: relative;
+  z-index: 1;
+  color: #d5bfa0;
+}
+
+.chapter-years {
+  position: relative;
+  z-index: 2;
+  color: #777777ff;
+}
+
+.chapter-card:hover .chapter-overlay {
+  background: rgba(255, 255, 255, 0.83); 
+}
+
+.chapter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.chapter-card:hover .chapter-bg {
+  opacity: 1;                     /* показываем фото */
+  transform: scale(1.08);         /* лёгкий зум */
+}
+
+@media (hover: none) {
+  .chapter-card.visible .chapter-bg {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+.chapter-card.visible .chapter-overlay {
+    background: rgba(255, 255, 255, 0.83);
+  }
+}
+
+.chapter-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.chapter-years {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+
+.hero-photo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-photo-inner {
+  max-width: 480px;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px #000000aa;
+  border: 1px solid #ffffff22;
+}
+
+.hero-photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Модальное окно с видео */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #000000aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal {
+  background: #111;
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 20px 40px #000000dd;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-size: 18px;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-video {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.modal-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 900px) {
+  .page {
+    padding: 20px 16px 32px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .chapters {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo-inner {
+    max-width: 360px;
+  }
+}
