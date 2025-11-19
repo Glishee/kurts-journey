@@ -1,16 +1,53 @@
-# React + Vite
+# Kurt's Journey – Personal Video Memoir Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A bilingual (English/German) React website built with Vite.  
+This project presents six chapters of Kurt's life journey through a clean, modern UI with smooth interactions and a mobile-friendly design.
 
-Currently, two official plugins are available:
+Each chapter opens a YouTube video in a modal window, and the entire site supports dynamic language switching.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎬 Video Chapters
+- Six chapters representing different periods of Kurt’s life  
+- Each chapter opens a YouTube video inside a modal  
+- Smooth transitions and fade effects
 
-## Expanding the ESLint configuration
+### 🌍 Multilingual Support
+- English ↔ German language toggle  
+- Language selection affects the entire UI instantly  
+- Country flag icons included in the switcher
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🖼 Interactive Chapter Cards
+- Static light cards by default  
+- On hover (desktop): background transitions to a black-and-white city photo  
+- On scroll-into-view (mobile): same effect triggers automatically  
+- Subtle zoom & overlay for a premium feel
+
+### 📱 Fully Responsive
+- Adaptive layout for smartphones, tablets, and desktops  
+- Mobile-optimized interaction logic (scroll-based animations)  
+- Touch-friendly design
+
+### ⚡ Built With Modern Tools
+- **React + Vite** (fast dev server, HMR)  
+- **CSS custom styling**  
+- **IntersectionObserver** for mobile animations  
+- Lightweight, no unnecessary dependencies
+
+---
+
+## 🛠 Technologies
+
+- **React 18**
+- **Vite**
+- **JavaScript**
+- **CSS3**
+- **IntersectionObserver API**
+- **YouTube iFrame Embed**
+
+---
+
+## 📁 Project Structure
+
